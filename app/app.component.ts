@@ -7,7 +7,7 @@ import { Animal } from './animal-modele';
   <div class='container'>
     <h1>Portland Zoo</h1>
     <p>List of animal at the zoo<p>
-    <animal-list></animal-list>
+    <animal-list [childAnimalsList]"masterAnimalList" (clickSender)='editAnimal($event)'></animal-list>
 
     <div>
       <div *ngIf='selectedAnimal'>
