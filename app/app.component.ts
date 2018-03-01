@@ -4,17 +4,13 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'app-root',
   template: `
-    <div class='jumbotron jumbotron-fluid'>
-      <div class='container'>
-        <h1 class='display-1'>Portland Zoo</h1>
-      </div>
+    <div class='jumbotron'>
+      <h1 class='display-1'>Portland Zoo</h1>
     </div>
     <div class='container'>
-      <div class='row'>
-        <div class='col-6'><edit-animal [childSelectedAnimal]='selectedAnimal' (doneButtonClickSender)='finishedEditing()'></edit-animal></div>
-        <div class='col-6'><new-animal></new-animal></div>
-      </div>
+      <new-animal (newAnimalSender)='addAnimal($event)'></new-animal>
       <animal-list [childAnimalsList]='masterAnimalList' (clickSender)='editAnimal($event)'></animal-list>
+      <edit-animal [childSelectedAnimal]='selectedAnimal' (doneButtonClickSender)='finishedEditing()'></edit-animal>
     </div>
   `
 })
@@ -33,5 +29,9 @@ export class AppComponent {
     }
     finishedEditing(){
       this.selectedAnimal = null;
+    }
+
+    addAnimal(newAnimalFromChild: Animal){
+      this.masterAnimalList.push(newAnimalFromChild);
     }
 }

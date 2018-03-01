@@ -21,15 +21,15 @@ import { Animal } from './animal.model';
     </thead>
     <tbody>
       <tr *ngFor='let currentAnimal of childAnimalsList'>
-        <td>{{currentAnimal.species}</td>
-        <td>{{currentAnimal.name}</td>
-        <td>{{currentAnimal.age}</td>
-        <td>{{currentAnimal.diet}</td>
-        <td>{{currentAnimal.location}</td>
-        <td>{{currentAnimal.caretakers}</td>
-        <td>{{currentAnimal.sex}</td>
-        <td>{{currentAnimal.likes}</td>
-        <td>{{currentAnimal.dislikes}<td>
+        <td>{{currentAnimal.species}}</td>
+        <td>{{currentAnimal.name}}</td>
+        <td>{{currentAnimal.age}}</td>
+        <td>{{currentAnimal.diet}}</td>
+        <td>{{currentAnimal.location}}</td>
+        <td>{{currentAnimal.caretakers}}</td>
+        <td>{{currentAnimal.sex}}</td>
+        <td>{{currentAnimal.likes}}</td>
+        <td>{{currentAnimal.dislikes}}<td>
         <td><button (click)='editButtonHasBeenClicked(currentAnimal)'>Edit!</button><td>
       </tr>
     </tbody>
