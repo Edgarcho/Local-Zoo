@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
-import { Animal } from './animal-modele';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'app-root',
   template: `
-  <div class='container'>
-    <h1>Portland Zoo</h1>
-    <p>List of animal at the zoo<p>
-    <animal-list [childAnimalsList]="masterAnimalList" (clickSender)='editAnimal($event)'></animal-list>
-    <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickSender)='finishedEditing()'></edit-animal>
-  </div>
+    <div class='jumbotron jumbotron-fluid'>
+      <div class='container'>
+        <h1 class='display-1'>Portland Zoo</h1>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-6'><edit-animal [childSelectedAnimal]='selectedAnimal' (doneButtonClickSender)='finishedEditing()'></edit-animal></div>
+        <div class='col-6'><new-animal></new-animal></div>
+      </div>
+      <animal-list [childAnimalsList]='masterAnimalList' (clickSender)='editAnimal($event)'></animal-list>
+    </div>
   `
 })
 
