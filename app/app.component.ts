@@ -5,12 +5,15 @@ import { Animal } from './animal.model';
   selector: 'app-root',
   template: `
     <div class='jumbotron'>
-      <h1 class='display-1'>Portland Zoo</h1>
+      <div class='container'>
+        <h1 class='display-1'>Portland Zoo</h1>
+        <p class='lead'>Someone Told Me It's All Happening At The Zoo<p>
+      </div>
     </div>
     <div class='container'>
       <new-animal (newAnimalSender)='addAnimal($event)'></new-animal>
-      <animal-list [childAnimalsList]='masterAnimalList' (clickSender)='editAnimal($event)'></animal-list>
       <edit-animal [childSelectedAnimal]='selectedAnimal' (doneButtonClickSender)='finishedEditing()'></edit-animal>
+      <animal-list [childAnimalsList]='masterAnimalList' (clickSender)='editAnimal($event)'></animal-list>
     </div>
   `
 })
